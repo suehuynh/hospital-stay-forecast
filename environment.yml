@@ -1,0 +1,11 @@
+name: hospital-stay-forecast
+channels:
+  - conda-forge
+dependencies:
+  - python=3.14
+  - pandas=3.0
+  - pyarrow=25.0
+  - requests=2.34
+  - jupyterlab=4.6
+  - ipykernel=7.4
+  - python-dotenv=1.2
