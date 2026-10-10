@@ -12,7 +12,7 @@ dependencies:
   - matplotlib=3.11
   - seaborn=0.13
   - scikit-learn=1.9
-  - libblas=*=*openblas  # the MKL build crashes numpy.linalg on Windows
+  - libblas=*=*openblas
   - pip
   - pip:
       - -e .
