@@ -9,3 +9,10 @@ dependencies:
   - jupyterlab=4.6
   - ipykernel=7.4
   - python-dotenv=1.2
+  - matplotlib=3.11
+  - seaborn=0.13
+  - scikit-learn=1.9
+  - libblas=*=*openblas  # the MKL build crashes numpy.linalg on Windows
+  - pip
+  - pip:
+      - -e .
