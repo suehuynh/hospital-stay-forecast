@@ -1,0 +1,198 @@
+SPARCS Hospital Inpatient Discharges 2024
+
+Source: New York State Department of Health, Statewide Planning and Research Cooperative System (SPARCS)
+        https://health.data.ny.gov/d/sf4k-39ay
+Size:   2,196,737 rows x 33 columns (one row per inpatient discharge, calendar year 2024)
+
+length_of_stay: Total number of days the patient stayed in the hospital.
+                Values 1-119 are exact days but 120 or more days are recorded as 120+ (2,404 rows).
+                No missing values. Median = 3, mean = 5.8 when 120+ is treated as 120.
+
+       1-119	Number of days
+       120+	120 days or more (top-coded)
+
+
+HOSPITAL / LOCATION
+
+health_service_area: Health service area of the hospital.
+                     5,295 missing; 
+
+       New York City
+       Long Island
+       Hudson Valley
+       Capital/Adirondacks
+       Western NY
+       Finger Lakes
+       Central NY
+       Southern Tier
+
+hospital_county: County in which the hospital is located (57 values; 5,295 missing)
+
+operating_certificate_number: Operating certificate number of the hospital (158 values; 5,295 missing)
+
+permanent_facility_id: Permanent facility identifier of the hospital (205 values; 5,295 missing)
+
+facility_name: Name of the hospital (203 values; no missing values)
+               Redacted rows (5,295) are labeled "Redacted for Confidentiality"
+
+
+PATIENT
+
+age_group: Age of the patient at admission, in groups
+
+       0-17	         0 to 17 years
+       18-29	    18 to 29 years
+       30-49	    30 to 49 years
+       50-69	    50 to 69 years
+       70 or Older	70 years and older
+
+zip_code: First three digits of the patient's ZIP code (50 values; 41,972 missing, 1.91%)
+
+       100-149	Three digit ZIP prefix
+       OOS	Out of state
+
+gender: Gender of the patient
+
+       F	Female
+       M	Male
+       U	Unknown (385 rows)
+
+race: Race of the patient
+
+       White	White
+       Black/African American	Black or African American
+       Multi-racial	Multi-racial
+       Other Race	Other race
+
+ethnicity: Ethnicity of the patient
+
+       Spanish/Hispanic	Spanish or Hispanic
+       Not Span/Hispanic	Not Spanish or Hispanic
+       Multi-ethnic	Multi-ethnic
+       Unknown	Unknown
+
+birth_weight: Birth weight of the infant in grams.
+              1,988,915 missing; 57 newborn rows are missing a value.
+              Range 400 to 9000 grams, median 3200.
+
+       400-9000	Grams
+       UNKN	Unknown (122 rows)
+
+
+ADMISSION AND DISCHARGE
+
+type_of_admission: Type of admission
+
+       Emergency	    Emergency
+       Urgent	        Urgent
+       Elective	        Elective
+       Newborn	        Newborn
+       Trauma	        Trauma
+       Not Available	Not available
+
+emergency_department_indicator: Whether the patient used the emergency department during the stay
+
+       Y	Yes
+       N	No
+
+
+DIAGNOSIS AND GROUPING
+
+ccsr_diagnosis_code: Clinical Classifications Software Refined (CCSR) category of the principal diagnosis
+                     (478 values; no missing values). The prefix gives the body system, for example
+                     CIR circulatory, PRG pregnancy, PNL perinatal, DIG digestive, INF infectious,
+                     INJ injury, MBD mental/behavioral, RSP respiratory, GEN genitourinary, XXX unacceptable principal diagnosis (199 rows)
+
+ccsr_diagnosis_description: Text description of ccsr_diagnosis_code 
+
+apr_drg_code: All Patient Refined Diagnosis Related Group (APR DRG) code (336 values; no missing values)
+
+apr_drg_description: Text description of apr_drg_code
+
+apr_mdc_code: APR Major Diagnostic Category code (26 values)
+
+       00	PRE MDC (ungroupable, 100 rows)
+       01	DISEASES AND DISORDERS OF THE NERVOUS SYSTEM
+       02	DISEASES AND DISORDERS OF THE EYE
+       03	EAR, NOSE, MOUTH, THROAT AND CRANIOFACIAL DISEASES AND DISORDERS
+       04	DISEASES AND DISORDERS OF THE RESPIRATORY SYSTEM
+       05	DISEASES AND DISORDERS OF THE CIRCULATORY SYSTEM
+       06	DISEASES AND DISORDERS OF THE DIGESTIVE SYSTEM
+       07	DISEASES AND DISORDERS OF THE HEPATOBILIARY SYSTEM AND PANCREAS
+       08	DISEASES AND DISORDERS OF THE MUSCULOSKELETAL SYSTEM AND CONN TISSUE
+       09	DISEASES AND DISORDERS OF THE SKIN SUBCUTANEOUS TISSUE AND BREAST
+       10	ENDOCRINE NUTRITIONAL AND METABOLIC DISEASES AND DISORDERS
+       11	DISEASES AND DISORDERS OF THE KIDNEY AND URINARY TRACT
+       12	DISEASES AND DISORDERS OF THE MALE REPRODUCTIVE SYSTEM
+       13	DISEASES AND DISORDERS OF THE FEMALE REPRODUCTIVE SYSTEM
+       14	PREGNANCY, CHILDBIRTH AND THE PUERPERIUM
+       15	NEWBORNS AND OTHER NEONATES WITH CONDTN ORIG IN PERINATAL PERIOD
+       16	DISEASES AND DISORDERS OF BLOOD BLOOD FORMING ORGANS AND IMMUNOLOG DISORD
+       17	LYMPHATIC, HEMATOPOIETIC, OTHER MALIGNANCIES, CHEMOTHERAPY AND RADIOTHERAPY
+       18	INFECTIOUS AND PARASITIC DISEASES, SYSTEMIC OR UNSPECIFIED SITES
+       19	MENTAL DISEASES AND DISORDERS
+       20	ALCOHOL/DRUG USE AND ALCOHOL/DRUG INDUCED ORGANIC MENTAL DISORDERS
+       21	POISONINGS, TOXIC EFFECTS OTHER INJURIES AND OTHER COMPLICATIONS OF TREATMENT
+       22	BURNS
+       23	REHABILITATION AFTERCARE OTHER FACTORS INFLUENCING HEALTH STATUS AND OTHER HEALTH SERVICE CONTACTS
+       24	HUMAN IMMUNODEFICIENCY VIRUS INFECTIONS
+       25	MULTIPLE SIGNIFICANT TRAUMA
+
+apr_mdc_description: Text description of apr_mdc_code
+
+apr_severity_of_illness_code: APR DRG severity of illness code
+
+       0	Undetermined (456 rows)
+       1	Minor
+       2	Moderate
+       3	Major
+       4	Extreme
+
+apr_severity_of_illness: Text description of apr_severity_of_illness_code
+
+       Minor	Minor
+       Moderate	Moderate
+       Major	Major
+       Extreme	Extreme
+       Undetermined	Undetermined
+
+apr_risk_of_mortality: APR DRG risk of mortality
+
+       Minor	Minor
+       Moderate	Moderate
+       Major	Major
+       Extreme	Extreme
+       Undetermined	Undetermined (456 rows)
+
+apr_medical_surgical: Whether the stay was medical or surgical, according to APR DRG
+
+       Medical	Medical
+       Surgical	Surgical
+       Not Applicable	Not applicable (456 rows)
+
+ccsr_procedure_code: CCSR category of the principal procedure (320 values)
+                     643,764 missing. Missing only on medical stays (643,617) and
+                     not applicable stays (147); every surgical stay has a procedure.
+
+ccsr_procedure_description: Text description of ccsr_procedure_code (one to one with the code; same missing rows)
+
+
+PAYMENT
+
+payment_typology_1: Primary expected source of payment (227 missing, 0.01%)
+
+       Medicare	Medicare
+       Medicaid	Medicaid
+       Private Health Insurance	Private health insurance
+       Blue Cross/Blue Shield	Blue Cross/Blue Shield
+       Self-Pay	Self-pay
+       Managed Care, Unspecified	Managed care, unspecified
+       Miscellaneous/Other	Miscellaneous or other
+       Federal/State/Local/VA	Federal, state, local or VA
+       Department of Corrections	Department of Corrections
+
+payment_typology_2: Secondary expected source of payment. Same categories as payment_typology_1
+                    1,204,408 missing
+
+payment_typology_3: Tertiary expected source of payment. Same categories as payment_typology_1
+                    1,956,699 missing
