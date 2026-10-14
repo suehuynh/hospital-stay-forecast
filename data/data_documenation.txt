@@ -41,10 +41,10 @@ PATIENT
 age_group: Age of the patient at admission, in groups
 
        0-17	         0 to 17 years
-       18-29	    18 to 29 years
-       30-49	    30 to 49 years
-       50-69	    50 to 69 years
-       70 or Older	70 years and older
+       18-29	        18 to 29 years
+       30-49	        30 to 49 years
+       50-69	        50 to 69 years
+       70 or Older	 70 years and older
 
 zip_code: First three digits of the patient's ZIP code (50 values; 41,972 missing, 1.91%)
 
@@ -83,17 +83,41 @@ ADMISSION AND DISCHARGE
 
 type_of_admission: Type of admission
 
-       Emergency	    Emergency
-       Urgent	        Urgent
+       Emergency	        Emergency
+       Urgent	               Urgent
        Elective	        Elective
        Newborn	        Newborn
-       Trauma	        Trauma
-       Not Available	Not available
+       Trauma	               Trauma
+       Not Available         Not available
 
 emergency_department_indicator: Whether the patient used the emergency department during the stay
 
        Y	Yes
        N	No
+
+patient_disposition: Where the patient went after leaving the hospital. Only known once the stay is over.
+
+       Home or Self Care	                     Home or self care
+       Home w/ Home Health Services	       Home with home health services
+       Skilled Nursing Home	                     Skilled nursing home
+       Left Against Medical Advice	              Left against medical advice
+       Expired	                            Died in hospital
+       Short-term Hospital	                     Short-term hospital
+       Inpatient Rehabilitation Facility	       Inpatient rehabilitation facility
+       Hospice - Home	                     Hospice at home
+       Hospice - Medical Facility	              Hospice in a medical facility
+       Psychiatric Hospital or Unit of Hosp	Psychiatric hospital or unit of a hospital
+       Facility w/ Custodial/Supportive Care	Facility with custodial or supportive care
+       Another Type Not Listed	              Another type not listed
+       Court/Law Enforcement	              Court or law enforcement
+       Medicare Cert Long Term Care Hospital	Medicare certified long term care hospital
+       Medicaid Cert Nursing Facility	       Medicaid certified nursing facility
+       Cancer Center or Childrens Hospital	Cancer center or children's hospital
+       Hosp Basd Medicare Approved Swing Bed	Hospital based Medicare approved swing bed
+       Federal Health Care Facility	       Federal health care facility
+       Critical Access Hospital	              Critical access hospital
+
+discharge_year: Year of discharge. Constant: 2024 for all rows
 
 
 DIAGNOSIS AND GROUPING
@@ -150,24 +174,24 @@ apr_severity_of_illness_code: APR DRG severity of illness code
 
 apr_severity_of_illness: Text description of apr_severity_of_illness_code
 
-       Minor	Minor
+       Minor	       Minor
        Moderate	Moderate
-       Major	Major
+       Major	       Major
        Extreme	Extreme
        Undetermined	Undetermined
 
 apr_risk_of_mortality: APR DRG risk of mortality
 
-       Minor	Minor
+       Minor	       Minor
        Moderate	Moderate
-       Major	Major
+       Major	       Major
        Extreme	Extreme
        Undetermined	Undetermined (456 rows)
 
 apr_medical_surgical: Whether the stay was medical or surgical, according to APR DRG
 
-       Medical	Medical
-       Surgical	Surgical
+       Medical	       Medical
+       Surgical	       Surgical
        Not Applicable	Not applicable (456 rows)
 
 ccsr_procedure_code: CCSR category of the principal procedure (320 values)
@@ -196,3 +220,7 @@ payment_typology_2: Secondary expected source of payment. Same categories as pay
 
 payment_typology_3: Tertiary expected source of payment. Same categories as payment_typology_1
                     1,956,699 missing
+
+total_charges: Total amount the hospital billed for the stay, in dollars. Only known once the stay is over.
+
+total_costs: Hospital's estimated cost of providing the care for the stay, in dollars. Only known once the stay is over.
