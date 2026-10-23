@@ -14,27 +14,7 @@ length_of_stay: Total number of days the patient stayed in the hospital.
 
 HOSPITAL / LOCATION
 
-health_service_area: Health service area of the hospital.
-                     5,295 missing; 
-
-       New York City
-       Long Island
-       Hudson Valley
-       Capital/Adirondacks
-       Western NY
-       Finger Lakes
-       Central NY
-       Southern Tier
-
-hospital_county: County in which the hospital is located (57 values; 5,295 missing)
-
-operating_certificate_number: Operating certificate number of the hospital (158 values; 5,295 missing)
-
 permanent_facility_id: Permanent facility identifier of the hospital (205 values; 5,295 missing)
-
-facility_name: Name of the hospital (203 values; no missing values)
-               Redacted rows (5,295) are labeled "Redacted for Confidentiality"
-
 
 PATIENT
 
@@ -71,14 +51,6 @@ ethnicity: Ethnicity of the patient
        Multi-ethnic	Multi-ethnic
        Unknown	Unknown
 
-birth_weight: Birth weight of the infant in grams.
-              1,988,915 missing; 57 newborn rows are missing a value.
-              Range 400 to 9000 grams, median 3200.
-
-       400-9000	Grams
-       UNKN	Unknown (122 rows)
-
-
 ADMISSION AND DISCHARGE
 
 type_of_admission: Type of admission
@@ -95,98 +67,13 @@ emergency_department_indicator: Whether the patient used the emergency departmen
        Y	Yes
        N	No
 
-patient_disposition: Where the patient went after leaving the hospital. Only known once the stay is over.
-
-       Home or Self Care	                     Home or self care
-       Home w/ Home Health Services	       Home with home health services
-       Skilled Nursing Home	                     Skilled nursing home
-       Left Against Medical Advice	              Left against medical advice
-       Expired	                            Died in hospital
-       Short-term Hospital	                     Short-term hospital
-       Inpatient Rehabilitation Facility	       Inpatient rehabilitation facility
-       Hospice - Home	                     Hospice at home
-       Hospice - Medical Facility	              Hospice in a medical facility
-       Psychiatric Hospital or Unit of Hosp	Psychiatric hospital or unit of a hospital
-       Facility w/ Custodial/Supportive Care	Facility with custodial or supportive care
-       Another Type Not Listed	              Another type not listed
-       Court/Law Enforcement	              Court or law enforcement
-       Medicare Cert Long Term Care Hospital	Medicare certified long term care hospital
-       Medicaid Cert Nursing Facility	       Medicaid certified nursing facility
-       Cancer Center or Childrens Hospital	Cancer center or children's hospital
-       Hosp Basd Medicare Approved Swing Bed	Hospital based Medicare approved swing bed
-       Federal Health Care Facility	       Federal health care facility
-       Critical Access Hospital	              Critical access hospital
-
-discharge_year: Year of discharge. Constant: 2024 for all rows
-
-
-DIAGNOSIS AND GROUPING
+Clinical
 
 ccsr_diagnosis_code: Clinical Classifications Software Refined (CCSR) category of the principal diagnosis
                      (478 values; no missing values). The prefix gives the body system, for example
                      CIR circulatory, PRG pregnancy, PNL perinatal, DIG digestive, INF infectious,
                      INJ injury, MBD mental/behavioral, RSP respiratory, GEN genitourinary, XXX unacceptable principal diagnosis (199 rows)
 
-ccsr_diagnosis_description: Text description of ccsr_diagnosis_code 
-
-apr_drg_code: All Patient Refined Diagnosis Related Group (APR DRG) code (336 values; no missing values)
-
-apr_drg_description: Text description of apr_drg_code
-
-apr_mdc_code: APR Major Diagnostic Category code (26 values)
-
-       00	PRE MDC (ungroupable, 100 rows)
-       01	DISEASES AND DISORDERS OF THE NERVOUS SYSTEM
-       02	DISEASES AND DISORDERS OF THE EYE
-       03	EAR, NOSE, MOUTH, THROAT AND CRANIOFACIAL DISEASES AND DISORDERS
-       04	DISEASES AND DISORDERS OF THE RESPIRATORY SYSTEM
-       05	DISEASES AND DISORDERS OF THE CIRCULATORY SYSTEM
-       06	DISEASES AND DISORDERS OF THE DIGESTIVE SYSTEM
-       07	DISEASES AND DISORDERS OF THE HEPATOBILIARY SYSTEM AND PANCREAS
-       08	DISEASES AND DISORDERS OF THE MUSCULOSKELETAL SYSTEM AND CONN TISSUE
-       09	DISEASES AND DISORDERS OF THE SKIN SUBCUTANEOUS TISSUE AND BREAST
-       10	ENDOCRINE NUTRITIONAL AND METABOLIC DISEASES AND DISORDERS
-       11	DISEASES AND DISORDERS OF THE KIDNEY AND URINARY TRACT
-       12	DISEASES AND DISORDERS OF THE MALE REPRODUCTIVE SYSTEM
-       13	DISEASES AND DISORDERS OF THE FEMALE REPRODUCTIVE SYSTEM
-       14	PREGNANCY, CHILDBIRTH AND THE PUERPERIUM
-       15	NEWBORNS AND OTHER NEONATES WITH CONDTN ORIG IN PERINATAL PERIOD
-       16	DISEASES AND DISORDERS OF BLOOD BLOOD FORMING ORGANS AND IMMUNOLOG DISORD
-       17	LYMPHATIC, HEMATOPOIETIC, OTHER MALIGNANCIES, CHEMOTHERAPY AND RADIOTHERAPY
-       18	INFECTIOUS AND PARASITIC DISEASES, SYSTEMIC OR UNSPECIFIED SITES
-       19	MENTAL DISEASES AND DISORDERS
-       20	ALCOHOL/DRUG USE AND ALCOHOL/DRUG INDUCED ORGANIC MENTAL DISORDERS
-       21	POISONINGS, TOXIC EFFECTS OTHER INJURIES AND OTHER COMPLICATIONS OF TREATMENT
-       22	BURNS
-       23	REHABILITATION AFTERCARE OTHER FACTORS INFLUENCING HEALTH STATUS AND OTHER HEALTH SERVICE CONTACTS
-       24	HUMAN IMMUNODEFICIENCY VIRUS INFECTIONS
-       25	MULTIPLE SIGNIFICANT TRAUMA
-
-apr_mdc_description: Text description of apr_mdc_code
-
-apr_severity_of_illness_code: APR DRG severity of illness code
-
-       0	Undetermined (456 rows)
-       1	Minor
-       2	Moderate
-       3	Major
-       4	Extreme
-
-apr_severity_of_illness: Text description of apr_severity_of_illness_code
-
-       Minor	       Minor
-       Moderate	Moderate
-       Major	       Major
-       Extreme	Extreme
-       Undetermined	Undetermined
-
-apr_risk_of_mortality: APR DRG risk of mortality
-
-       Minor	       Minor
-       Moderate	Moderate
-       Major	       Major
-       Extreme	Extreme
-       Undetermined	Undetermined (456 rows)
 
 apr_medical_surgical: Whether the stay was medical or surgical, according to APR DRG
 
@@ -197,9 +84,6 @@ apr_medical_surgical: Whether the stay was medical or surgical, according to APR
 ccsr_procedure_code: CCSR category of the principal procedure (320 values)
                      643,764 missing. Missing only on medical stays (643,617) and
                      not applicable stays (147); every surgical stay has a procedure.
-
-ccsr_procedure_description: Text description of ccsr_procedure_code (one to one with the code; same missing rows)
-
 
 PAYMENT
 
@@ -220,7 +104,3 @@ payment_typology_2: Secondary expected source of payment. Same categories as pay
 
 payment_typology_3: Tertiary expected source of payment. Same categories as payment_typology_1
                     1,956,699 missing
-
-total_charges: Total amount the hospital billed for the stay, in dollars. Only known once the stay is over.
-
-total_costs: Hospital's estimated cost of providing the care for the stay, in dollars. Only known once the stay is over.
