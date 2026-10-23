@@ -9,7 +9,7 @@ Hospitals plan beds, staff and discharges around how long each patient will stay
 The data is the **SPARCS Hospital Inpatient Discharges (De-identified), 2024** dataset from the New York State Department of Health: 2,196,737 inpatient discharges and 33 columns, one row per discharge.
 
 - Source: <https://health.data.ny.gov/d/sf4k-39ay>
-- Column-by-column description: [`data/data_documenation.txt`](data/data_documenation.txt)
+- Column-by-column description: [`data/data_documentation.txt`](data/data_documentation.txt)
 
 The analysis is in one notebook, `src/sparcs_los_eda.ipynb`, which is organised in four sections:
 
