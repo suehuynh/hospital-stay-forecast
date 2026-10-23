@@ -4,7 +4,7 @@ Regression model to forecast real-time length of stay of any patients at admissi
 
 ## Overview
 
-Hospitals plan beds, staff and discharges around how long each patient will stay. The goal of this project is to predict the length of stay (`los`, in days) of a patient once admitted, using only information known at admission.
+Hospitals plan beds, staff and discharges around how long each patient will stay. The goal of this project is to predict the length of stay (`los`, in days) of a patient once admitted, using only information known at admission. We use patient information, medical information collected at admission, and hospital information to predict the length of stay. Our regression model would have potential impacts on early bed-turnover scheduling and calibrating staffing ratios using the predicted length of stay.
 
 The data is the **SPARCS Hospital Inpatient Discharges (De-identified), 2024** dataset from the New York State Department of Health: 2,196,737 inpatient discharges and 33 columns, one row per discharge.
 
@@ -15,7 +15,7 @@ The analysis is in one notebook, `src/sparcs_los_eda.ipynb`, which is organised 
 
 1. **Setup and load:** downloads the data from the Socrata (SODA) API in pages of 50,000 rows and caches it as parquet.
 2. **Data understanding:** column types, missing values, and the target variable.
-3. **Data cleaning:** every decision is explained next to the code that applies it.
+3. **Data cleaning:** every decision is explained next to the code that applies it. Includes filtering columns for data leakage and removing rows.
 4. **EDA charts:** the distribution of length of stay, and how it varies with diagnosis, procedure, age, payer, race and emergency department use.
 
 ## Main findings from the EDA
