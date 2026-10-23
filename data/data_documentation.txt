@@ -1,0 +1,126 @@
+SPARCS Hospital Inpatient Discharges 2024
+
+Source: New York State Department of Health, Statewide Planning and Research Cooperative System (SPARCS)
+        https://health.data.ny.gov/d/sf4k-39ay
+Size:   2,196,737 rows x 33 columns (one row per inpatient discharge, calendar year 2024)
+Types:  Each column below is labeled continuous (unit given), ordinal (categories listed in order),
+        or categorical (every category described).
+
+length_of_stay: Total number of days the patient stayed in the hospital.
+                Type: continuous. Unit: days.
+                Values 1-119 are exact days but 120 or more days are recorded as 120+ (2,404 rows).
+                No missing values. Median = 3, mean = 5.8 when 120+ is treated as 120.
+
+       1-119	Number of days
+       120+	120 days or more (top-coded)
+
+
+HOSPITAL / LOCATION
+
+permanent_facility_id: Permanent facility identifier of the hospital (205 values; 5,295 missing)
+                       Type: categorical. Each value is a code for one hospital, so there are 205
+                       categories. A missing value means the hospital was redacted.
+
+PATIENT
+
+age_group: Age of the patient at admission, in groups
+           Type: ordinal. Ordered from youngest to oldest.
+
+       0-17	        0 to 17 years (youngest)
+       18-29	       18 to 29 years
+       30-49	       30 to 49 years
+       50-69	       50 to 69 years
+       70 or Older	70 years and older (oldest)
+
+zip_code: First three digits of the patient's ZIP code (50 values; 41,972 missing, 1.91%)
+          Type: categorical. Each prefix is a region, and the numbers have no meaningful order.
+
+       100-149	Three digit ZIP prefix of the patient's home area (one category per prefix)
+       OOS	       Out of state
+
+gender: Gender of the patient
+        Type: categorical.
+
+       F	Female
+       M	Male
+       U	Unknown (385 rows)
+
+race: Race of the patient
+      Type: categorical.
+
+       White	                     White
+       Black/African American	Black or African American
+       Multi-racial	              More than one race
+       Other Race	              Any race not listed above
+
+ethnicity: Ethnicity of the patient
+           Type: categorical.
+
+       Spanish/Hispanic	Spanish or Hispanic
+       Not Span/Hispanic	Not Spanish or Hispanic
+       Multi-ethnic	       More than one ethnicity
+       Unknown	       Not known or not reported
+
+ADMISSION AND DISCHARGE
+
+type_of_admission: Type of admission
+                   Type: categorical.
+
+       Emergency	Patient needed immediate care for a severe or life threatening condition
+       Urgent	       Patient needed prompt care but the condition was not an emergency
+       Elective	Planned in advance; the condition allowed time to schedule the stay
+       Newborn	Stay of a newborn baby, typically the birth stay
+       Trauma	       Admitted as a trauma case, such as a serious injury treated at a trauma center
+       Not Available	Admission type was not recorded
+
+emergency_department_indicator: Whether the patient used the emergency department during the stay
+                                Type: categorical (two categories).
+
+       Y	Yes, the patient came through the emergency department
+       N	No
+
+Clinical
+
+ccsr_diagnosis_code: Clinical Classifications Software Refined (CCSR) category of the principal diagnosis
+                     (478 values; no missing values). The prefix gives the body system, for example
+                     CIR circulatory, PRG pregnancy, PNL perinatal, DIG digestive, INF infectious,
+                     INJ injury, MBD mental/behavioral, RSP respiratory, GEN genitourinary, XXX unacceptable principal diagnosis (199 rows)
+                     Type: categorical. Each code is one diagnosis category, so there are 478
+                     categories.
+
+
+apr_medical_surgical: Whether the stay was medical or surgical, according to APR DRG
+                      Type: categorical.
+
+       Medical	       Stay grouped as a medical (non-operative) case
+       Surgical	       Stay grouped as a surgical case, with an operating room procedure
+       Not Applicable	Could not be grouped as medical or surgical (456 rows)
+
+ccsr_procedure_code: CCSR category of the principal procedure (320 values)
+                     643,764 missing. Missing only on medical stays (643,617) and
+                     not applicable stays (147); every surgical stay has a procedure.
+                     Type: categorical. Each code is one procedure category, so there are 320
+                     categories. A missing value means no procedure was recorded.
+
+PAYMENT
+
+payment_typology_1: Primary expected source of payment (227 missing, 0.01%)
+                    Type: categorical.
+
+       Medicare	              Federal health insurance, mainly for people 65 and older or with disabilities
+       Medicaid	              Government health coverage for low income patients
+       Private Health Insurance	Commercial insurance plan other than Blue Cross/Blue Shield
+       Blue Cross/Blue Shield	Blue Cross/Blue Shield insurance plan
+       Self-Pay	              Patient pays directly, with no insurance
+       Managed Care, Unspecified	Managed care plan (such as an HMO) with the plan type not specified
+       Miscellaneous/Other	       Any other payment source
+       Federal/State/Local/VA	Other government programs, including Veterans Affairs
+       Department of Corrections	Paid by the Department of Corrections (incarcerated patients)
+
+payment_typology_2: Secondary expected source of payment. Same categories as payment_typology_1
+                    1,204,408 missing
+                    Type: categorical.
+
+payment_typology_3: Tertiary expected source of payment. Same categories as payment_typology_1
+                    1,956,699 missing
+                    Type: categorical.
