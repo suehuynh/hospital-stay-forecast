@@ -116,9 +116,14 @@ Open `src/sparcs_los_eda.ipynb` and run all cells (Kernel, then Restart and Run 
 
 ## References
 
-1. New York State Department of Health. *Hospital Inpatient Discharges (SPARCS De-Identified): 2024*, 2024. <https://health.data.ny.gov/d/sf4k-39ay>
-2. Socrata. *Socrata Open Data API (SODA) Documentation: Hospital Inpatient Discharges (SPARCS De-Identified) Dataset sf4k-39ay*. <https://dev.socrata.com/foundry/health.data.ny.gov/sf4k-39ay>
-3. 3M Health Information Systems. *3M All Patient Refined Diagnosis Related Groups (APR DRG) Methodology Overview*, 2023. <https://hcup-us.ahrq.gov/db/nation/nis/3M_aprdrg_methodology_overview.pdf>
+1. 3M Health Information Systems. *3M All Patient Refined Diagnosis Related Groups (APR DRG) Methodology Overview*, 2023. <https://hcup-us.ahrq.gov/db/nation/nis/3M_aprdrg_methodology_overview.pdf>
+2. Xinyu Chen, Yifan Wang, Elinor Schoenfeld, Mary Saltz, Joel Saltz, and Fusheng Wang. *Spatio-temporal analysis for New York State SPARCS data*. AMIA Joint Summits on Translational Science Proceedings, 2017:483–492, 2017.
+3. Jonathan E. Helm, Shervin AhmadBeygi, and Mark P. Van Oyen. *Design and analysis of hospital admission control for operational effectiveness*. Production and Operations Management, 20(3):359–374, 2011. <https://doi.org/10.1111/j.1937-5956.2011.01231.x>
+4. Victor Koltenyuk, Jay Ayar, Elizabeth Drugge, and Anna R. Cooper. *Determinants of discharge disposition for adult patients admitted with pathologic fractures in New York State: A SPARCS study, 2020–2022*. Montefiore Einstein Journal of Musculoskeletal Medicine and Surgery, 5:30498929261440188, 2026. <https://doi.org/10.1177/30498929261440188>
+5. New York State Department of Health. *Hospital Inpatient Discharges (SPARCS De-Identified): 2024*, 2024. <https://health.data.ny.gov/d/sf4k-39ay>
+6. Jonathan S. Olshaker and Niels K. Rathlev. *Emergency department overcrowding and ambulance diversion: The impact and potential solutions of extended boarding of admitted patients in the emergency department*. The Journal of Emergency Medicine, 30(3):351–356, 2006. ISSN 0736-4679. <https://doi.org/10.1016/j.jemermed.2005.05.023>
+7. Socrata. *Socrata Open Data API (SODA) Documentation: Hospital Inpatient Discharges (SPARCS De-Identified) Dataset sf4k-39ay*. <https://dev.socrata.com/foundry/health.data.ny.gov/sf4k-39ay>
+8. Beibei Yuan and Qiang Su. *Data-driven automated admission control for hospital bed allocation: A dynamic threshold policy*. In 2026 IEEE International Conference on Mechatronics and Automation (ICMA), pages 1062–1066, 2026. <https://doi.org/10.1109/ICMA69663.2026.11647484>
 
 ## License
 
