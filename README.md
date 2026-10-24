@@ -34,7 +34,7 @@ hospital-stay-forecast/
 ├── LICENSE
 ├── environment.yml          # conda environment (pinned versions)
 ├── data/
-│   ├── data_documenation.txt   # description of the source columns
+│   ├── data_documentation.txt   # description of the source columns
 │   ├── raw/                    # downloaded data, created by the notebook, not committed
 │   └── processed/              # cleaned data, created by the notebook, not committed
 ├── src/
