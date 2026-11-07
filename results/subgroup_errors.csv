@@ -1,0 +1,32 @@
+feature,level,rows,MAE,mean_actual,mean_predicted,bias
+age_group,0-17,20635,3.47,4.89,4.94,0.04
+age_group,18-29,36371,2.83,4.81,4.84,0.02
+age_group,30-49,84202,3.32,5.24,5.23,-0.01
+age_group,50-69,116260,4.56,6.61,6.62,0.01
+age_group,70 or Older,141229,4.1,6.53,6.54,0.01
+race,Black/African American,73990,4.75,7.0,7.03,0.03
+race,Multi-racial,5731,3.83,5.92,5.95,0.03
+race,Other Race,107761,3.88,5.84,5.83,-0.01
+race,White,211215,3.66,5.81,5.82,0.01
+ethnicity,Multi-ethnic,477,3.65,5.69,6.12,0.43
+ethnicity,Not Span/Hispanic,284306,3.86,6.02,6.03,0.02
+ethnicity,Spanish/Hispanic,65422,3.61,5.51,5.52,0.01
+ethnicity,Unknown,48492,4.69,6.9,6.86,-0.04
+gender,F,219091,3.39,5.49,5.51,0.02
+gender,M,179587,4.58,6.72,6.71,-0.01
+gender,U,19,3.03,5.53,6.13,0.61
+payment_typology_1,Blue Cross/Blue Shield,33847,2.8,4.52,4.51,-0.01
+payment_typology_1,Department of Corrections,303,4.89,6.87,6.36,-0.51
+payment_typology_1,Federal/State/Local/VA,3779,3.57,5.54,5.6,0.05
+payment_typology_1,"Managed Care, Unspecified",5363,3.29,5.03,5.07,0.05
+payment_typology_1,Medicaid,106846,4.1,6.12,6.13,0.02
+payment_typology_1,Medicare,185086,4.31,6.7,6.7,0.01
+payment_typology_1,Miscellaneous/Other,4261,4.51,6.21,6.27,0.06
+payment_typology_1,Not recorded,42,3.03,4.79,5.05,0.26
+payment_typology_1,Private Health Insurance,53681,3.02,4.78,4.79,0.01
+payment_typology_1,Self-Pay,5489,3.57,5.32,5.27,-0.05
+type_of_admission,Elective,70860,2.86,4.88,4.91,0.03
+type_of_admission,Emergency,291475,4.09,6.22,6.23,0.01
+type_of_admission,Not Available,719,5.62,8.95,8.74,-0.22
+type_of_admission,Trauma,1994,5.11,7.08,7.12,0.04
+type_of_admission,Urgent,33649,4.57,6.82,6.81,-0.02
