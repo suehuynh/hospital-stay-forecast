@@ -13,3 +13,5 @@ dependencies:
   - matplotlib=3.11
   - scipy=1.18
   - seaborn=0.13
+  - scikit-learn=1.9.0
+  - catboost=1.2.10
