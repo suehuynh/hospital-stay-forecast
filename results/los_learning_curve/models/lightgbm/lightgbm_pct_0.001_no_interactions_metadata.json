@@ -1,0 +1,42 @@
+{
+    "algorithm": "lightgbm",
+    "pct": 0.001,
+    "use_interactions": false,
+    "features": [
+        "permanent_facility_id",
+        "age_group",
+        "zip_code",
+        "gender",
+        "race",
+        "ethnicity",
+        "type_of_admission",
+        "payment_typology_1",
+        "emergency_department_indicator",
+        "payment_typology_2",
+        "payment_typology_3"
+    ],
+    "interaction_features": [],
+    "best_params": {
+        "model__learning_rate": "0.05",
+        "model__n_estimators": "100",
+        "model__num_leaves": "15"
+    },
+    "cv_metrics": {
+        "rmse": 8.729356117115637,
+        "mae": 4.689664435807447,
+        "median_ae": 3.082613857943447,
+        "r2": -0.0392225176873481
+    },
+    "test_metrics": {
+        "rmse": 8.716314956554465,
+        "mae": 4.604112497125751,
+        "median_ae": 3.0946799488657395,
+        "r2": 0.015887911269447885
+    },
+    "data_fingerprint": "7b660240b4ca3799b9a9ceff81ed2bf20fccb17a9bd994a2dae2da9643f4edc0",
+    "test_random_state": 42,
+    "subset_random_state": 42,
+    "cv_random_state": 42,
+    "n_folds": 5,
+    "model_path": "../results/los_learning_curve\\models\\lightgbm\\lightgbm_pct_0.001_no_interactions.joblib"
+}
