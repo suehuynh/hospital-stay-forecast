@@ -16,3 +16,4 @@ dependencies:
   - scikit-learn=1.9
   - xgboost=3.4
   - catboost=1.2
+  - lightgbm=4.7.0
