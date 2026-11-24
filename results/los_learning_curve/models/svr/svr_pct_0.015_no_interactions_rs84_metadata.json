@@ -1,0 +1,43 @@
+{
+    "algorithm": "svr",
+    "pct": 0.015,
+    "use_interactions": false,
+    "random_state": 84,
+    "features": [
+        "permanent_facility_id",
+        "age_group",
+        "zip_code",
+        "gender",
+        "race",
+        "ethnicity",
+        "type_of_admission",
+        "payment_typology_1",
+        "emergency_department_indicator",
+        "payment_typology_2",
+        "payment_typology_3"
+    ],
+    "interaction_features": [],
+    "best_params": {
+        "model__C": "10",
+        "model__epsilon": "1.0",
+        "model__kernel": "rbf"
+    },
+    "cv_metrics": {
+        "rmse": 8.677349422906783,
+        "mae": 3.890068948077387,
+        "median_ae": 1.9177148620597546,
+        "r2": -0.003717432616630223
+    },
+    "test_metrics": {
+        "rmse": 9.174927839903186,
+        "mae": 4.001826440699954,
+        "median_ae": 1.9335917598215224,
+        "r2": 0.0021315494788162193
+    },
+    "data_fingerprint": "7b660240b4ca3799b9a9ceff81ed2bf20fccb17a9bd994a2dae2da9643f4edc0",
+    "test_random_state": 84,
+    "subset_random_state": 84,
+    "cv_random_state": 84,
+    "n_folds": 5,
+    "model_path": "../results/los_learning_curve/models/svr/svr_pct_0.015_no_interactions_rs84.joblib"
+}
