@@ -1,0 +1,47 @@
+{
+    "algorithm": "xgb",
+    "pct": 0.01,
+    "use_interactions": false,
+    "random_state": 126,
+    "features": [
+        "permanent_facility_id",
+        "age_group",
+        "zip_code",
+        "gender",
+        "race",
+        "ethnicity",
+        "type_of_admission",
+        "payment_typology_1",
+        "emergency_department_indicator",
+        "payment_typology_2",
+        "payment_typology_3"
+    ],
+    "interaction_features": [],
+    "best_params": {
+        "model__colsample_bytree": "0.5",
+        "model__early_stopping_rounds": "50",
+        "model__learning_rate": "0.1",
+        "model__max_depth": "6",
+        "model__n_estimators": "10000",
+        "model__n_jobs": "-1",
+        "n_trees": "42"
+    },
+    "cv_metrics": {
+        "rmse": 8.53767900466919,
+        "mae": 4.496687984466552,
+        "median_ae": 3.1173402786254885,
+        "r2": 0.0512523889541626
+    },
+    "test_metrics": {
+        "rmse": 8.545708656311035,
+        "mae": 4.463859558105469,
+        "median_ae": 3.0940370559692383,
+        "r2": 0.05487149953842163
+    },
+    "data_fingerprint": "7b660240b4ca3799b9a9ceff81ed2bf20fccb17a9bd994a2dae2da9643f4edc0",
+    "test_random_state": 126,
+    "subset_random_state": 126,
+    "cv_random_state": 126,
+    "n_folds": 5,
+    "model_path": "../results/los_learning_curve/models/xgb/xgb_pct_0.01_no_interactions_rs126.joblib"
+}
